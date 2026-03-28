@@ -41,5 +41,5 @@ Catapult needs to delete old blockchain data to make room for the fresh bootstra
 
 # 💖 Donating
 If you want to donate to this project feel free to send MEWC to this address
---------------------- MATQBDBMdHCf6cjuH5q8zWAj8zNgNoqWYN ---------------------
+MATQBDBMdHCf6cjuH5q8zWAj8zNgNoqWYN
 
