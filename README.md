@@ -18,8 +18,6 @@ If we want Meowcoin to grow, we need a way to get people on the network now, not
 Go to the [Releases](https://github.com/Dem0-cs/Catapult/releases) page and download the binary for your operating system:
 * **Windows:** `catapult-windows-x86_64.exe`
 * **Linux:** `catapult-linux-x86_64`
-* **macOS (Intel):** `catapult-darwin-x86_64`
-* **macOS (Apple Silicon/M1/M2):** `catapult-darwin-arm64`
 
 ### **Step 2: Preparation**
 **CRITICAL:** Ensure your Meowcoin Core wallet is **completely closed**. 
@@ -31,7 +29,7 @@ Catapult needs to delete old blockchain data to make room for the fresh bootstra
 1. Double-click `catapult-windows-x86_64.exe`.
 2. If a "Windows protected your PC" message appears, click **More Info** and then **Run Anyway**.
 
-#### **🐧 Linux / 🍎 macOS**
+#### **🐧 Linux**
 1. Open your terminal in the folder where you downloaded the file.
 2. Grant execution permissions:
    `chmod +x catapult-linux-x86_64`  # or catapult-darwin-arm64 / x86_64
