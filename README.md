@@ -7,7 +7,7 @@ Meowcoin's blockchain has been growing for years and is almost 4GB. The problem 
 If we want Meowcoin to grow, we need a way to get people on the network now, not next week. Most people simply aren't going to wait that long just to open a crypto wallet. Catapult exists to remove that barrier, providing a high-speed "shortcut" so new users can start participating in the ecosystem immediately.
 
 # 📋 Prerequisites
-- Ensure you have at least 15GB of free space on your device.
+- Ensure you have at least 10GB of free space on your device.
 - You may need to run as administrator as Catapult interacts with your AppData folder.
 - Make sure your wallet is fully closed.
 
@@ -17,7 +17,6 @@ If we want Meowcoin to grow, we need a way to get people on the network now, not
 ### **Step 1: Download**
 Go to the [Releases](https://github.com/Dem0-cs/Catapult/releases) page and download the binary for your operating system:
 * **Windows:** `catapult-windows-x86_64.exe`
-* **Linux:** `catapult-linux-x86_64`
 
 ### **Step 2: Preparation**
 **CRITICAL:** Ensure your Meowcoin Core wallet is **completely closed**. 
@@ -30,11 +29,7 @@ Catapult needs to delete old blockchain data to make room for the fresh bootstra
 2. If a "Windows protected your PC" message appears, click **More Info** and then **Run Anyway**.
 
 #### **🐧 Linux**
-1. Open your terminal in the folder where you downloaded the file.
-2. Grant execution permissions:
-   `chmod +x catapult-linux-x86_64`  # or catapult-darwin-arm64 / x86_64
-3. Run the application:
-   `./catapult-linux-x86_64`
+WIP...
 
 
 # 💖 Donating
