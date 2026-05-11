@@ -2,15 +2,16 @@ package main
 
 import (
 	"archive/zip"
-	"encoding/json"
 	"crypto/sha256"
 	"encoding/hex"
+	"encoding/json"
 	"fmt"
 	"io"
 	"log"
 	"net/http"
 	"os"
 	"path/filepath"
+	"runtime"
 	"strings"
 	"time"
 
@@ -70,7 +71,7 @@ func main() {
     if(version != info.Version) {
         fmt.Print("⚠️ A new version of Catapult has been detected! It is highly recommended you update.")
         fmt.Print("Continue anyways? (y/N): ")
-        
+
         var confirmVersion string
         fmt.Scanln(&confirmVersion)
 
@@ -83,33 +84,40 @@ func main() {
         }
     }
 
-    roaming, _ := os.UserConfigDir()
-        meowFolder := filepath.Join(roaming, "Meowcoin")
+    home, _ := os.UserHomeDir()
+    var meowFolder string
 
-        var serverChoice string
-        fmt.Print("🛜 Use Catapult servers? (Y/n): ")
-        fmt.Scanln(&serverChoice)
+    if runtime.GOOS == "windows" {
+        roaming, _ := os.UserConfigDir()
+        meowFolder = filepath.Join(roaming, "Meowcoin")
+    } else {
+        meowFolder = filepath.Join(home, ".meowcoin")
+    }
+
+    var serverChoice string
+    fmt.Print("🛜 Use Catapult servers? (Y/n): ")
+    fmt.Scanln(&serverChoice)
         
-        if strings.ToLower(serverChoice) == "n" || strings.ToLower(serverChoice) == "no" {
-            fmt.Print("🔗 Please paste the link to your custom .zip: ")
-            fmt.Scanln(&customLink)
-            useCustomBoostrap = true
-        }
+    if strings.ToLower(serverChoice) == "n" || strings.ToLower(serverChoice) == "no" {
+        fmt.Print("🔗 Please paste the link to your custom .zip: ")
+        fmt.Scanln(&customLink)
+        useCustomBoostrap = true
+    }
 
-        fmt.Print("⚠️ This WIPES blocks, chainstate, assets, and indexes folders. Ready to Catapult? (y/N): ")
-        var confirm string
-        fmt.Scanln(&confirm)
+    fmt.Print("⚠️ This WIPES blocks, chainstate, assets, and indexes folders. Ready to Catapult? (y/N): ")
+    var confirm string
+    fmt.Scanln(&confirm)
 
-        if strings.ToLower(confirm) != "y" && strings.ToLower(confirm) != "yes" {
-            fmt.Println("Catapult aborted. No files were changed.")
-            fmt.Println("Press 'Enter' to exit...")
+    if strings.ToLower(confirm) != "y" && strings.ToLower(confirm) != "yes" {
+        fmt.Println("Catapult aborted. No files were changed.")
+        fmt.Println("Press 'Enter' to exit...")
                     
-            fmt.Scanln() 
-            return
-        }
+        fmt.Scanln() 
+        return
+    }
 
-        fmt.Println("🚀 Initializing Download...")
-        DownloadLatest(meowFolder, !useCustomBoostrap, info)
+    fmt.Println("🚀 Initializing Download...")
+    DownloadLatest(meowFolder, !useCustomBoostrap, info)
 }
 
 
