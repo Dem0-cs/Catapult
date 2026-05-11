@@ -10,6 +10,7 @@ If we want Meowcoin to grow, we need a way to get people on the network now, not
 
 ## 📋 Prerequisites
 
+- Meowcoin Core Apex Meow-v30.2.0rc1 or higher is recommended but should work fine for 3.0.6.
 - Ensure you have at least 10GB of free space on your device.
 - You may need to run as administrator as Catapult interacts with your AppData folder.
 - Make sure your wallet is fully closed.
